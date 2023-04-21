@@ -1,0 +1,70 @@
+{
+  "pages": [{
+    "path": "pages/home/home",
+    "style": {
+      // "navigationBarTitleText": "",
+      "enablePullDownRefresh": false
+    }
+
+  }, {
+    "path": "pages/dream/dream",
+    "style": {
+      // "navigationBarTitleText": "",
+      "enablePullDownRefresh": false
+    }
+
+  }, {
+    "path": "pages/cookingTrip/cookingTrip",
+    "style": {
+      // "navigationBarTitleText": "",
+      "enablePullDownRefresh": false
+    }
+
+  }, {
+    "path": "pages/my/my",
+    "style": {
+      // "navigationBarTitleText": "",
+      "enablePullDownRefresh": false
+    }
+
+  }],
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "四海香",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8",
+    "app-plus": {
+      "background": "#efeff4"
+    }
+  },
+  "tabBar": {
+    "selectedColor": "#C00000",
+    "list": [{
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "static/icon/footer1-sel.png",
+        "selectedIconPath": "static/icon/footer1-sel.png"
+      },
+      {
+        "pagePath": "pages/dream/dream",
+        "text": "心愿单",
+        "iconPath": "static/icon/footer2.png",
+        "selectedIconPath": "static/icon/footer2-sel.png"
+      },
+      {
+        "pagePath": "pages/cookingTrip/cookingTrip",
+        "text": "烹饪行程",
+        "iconPath": "static/icon/footer3.png",
+        "selectedIconPath": "static/icon/footer3-sel.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "static/icon/footer4.png",
+        "selectedIconPath": "static/icon/footer4-sel.png"
+      }
+    ]
+  }
+
+
+}
