@@ -41,7 +41,16 @@
       "enablePullDownRefresh": false
     }
 
-  }],
+  }    ,{
+            "path" : "subpkg/edge/edge",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "餐饮周边",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
   "globalStyle": {
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "四海香",

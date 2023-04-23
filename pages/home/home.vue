@@ -79,61 +79,36 @@
       <!-- 轮播图区域 -->
       <swiper :autoplay="true" :interval="3000" :duration="1000">
         <!-- 第一页 -->
-        <swiper-item class="items">
+        <swiper-item class="items" v-for="(v,k) in goodslist" :key="k">
+          <!-- 左面的一组 -->
           <navigator class="ab" url="">
-            <image src="/static/icon/gg.jpg" mode=""></image>
+            <image :src="v.pic" mode=""></image>
             <!-- 下面商品名称+价格 -->
             <view class="zzz">
               <view class="">
-                gvhbbh
+                {{v.goodsname}}
               </view>
               <view class="">
-                <text>￥4999/桌</text>
+                <text>￥{{v.price}}/桌</text>
               </view>
             </view>
           </navigator>
 
-          <navigator class="ab" url="">
-            <image src="/static/icon/gg.jpg" mode=""></image>
+          <!-- 右面的一组 -->
+         <navigator class="ab" url="">
+            <image :src="v.pic" mode=""></image>
             <!-- 下面商品名称+价格 -->
             <view class="zzz">
               <view class="">
-                gvhbbh
+                {{v.goodsname}}
               </view>
               <view class="">
-                <text>￥4999/桌</text>
+                <text>￥{{v.price}}/桌</text>
               </view>
             </view>
           </navigator>
         </swiper-item>
 
-        <swiper-item class="items">
-          <navigator class="ab" url="">
-            <image src="/static/icon/gg.jpg" mode=""></image>
-            <!-- 下面商品名称+价格 -->
-            <view class="zzz">
-              <view class="">
-                gvhbbh
-              </view>
-              <view class="">
-                <text>￥4999/桌</text>
-              </view>
-            </view>
-          </navigator>
-
-          <navigator class="ab" url="">
-            <image src="/static/icon/gg.jpg" mode=""></image>
-            <!-- 下面商品名称+价格 -->
-            <view class="zzz">
-              <view class="">
-                gvhbbh
-              </view>
-              <view class="">
-                <text>￥4999/桌</text>
-              </view>
-            </view>
-          </navigator>
-        </swiper-item>
 
       </swiper>
     </view>
@@ -227,11 +202,12 @@
     data() {
       return {
         // 使用async 和  await 发请求 第三步 
-        list: []
+        list: [],
+        goodslist: []
       };
     },
     methods: {
-      // 使用async 和  await 发请求 第一步
+      // *****第一个接口地址   使用async 和  await 发请求 第一步
       async getList() {
         let ret = await uni.request({
           url: 'http://api.brqc.com.cn/cpz/shxmp/navlist',
@@ -239,7 +215,7 @@
         })
         //因为接口这样子let ret = [null,data]我们要解构赋值或者取数组里面的第二个元素
         // let [err, res] = ret;    //解构赋值写法用数组解构
-        console.log(ret);
+        console.log(ret, '第一个接口返回的结果');
         // 把数据放到data定义好的list里面
         // 使用async 和  await 发请求 第四步
         // this.list = ret[1].data.data //不用解构赋值的vue2写法取数组里面的第二个元素this.list = ret[1].data.data
@@ -251,11 +227,38 @@
         // 需就是加一个动画数据正在加载中的效果 第二步
         uni.hideLoading(); //取到数据立即隐藏动画数据正在加载的效果
 
+      },
+
+
+      // *****第二个接口地址   使用async 和  await 发请求 第一步
+      async getgoodslist() {
+        let ret = await uni.request({
+          url: 'http://api.brqc.com.cn/cpz/shxmp/goodslist',
+          data: {},
+        })
+        //因为接口这样子let ret = [null,data]我们要解构赋值或者取数组里面的第二个元素
+        // let [err, res] = ret;    //解构赋值写法用数组解构
+        console.log(ret, '第二个接口返回的结果');
+        // 把数据放到data定义好的list里面
+        // 使用async 和  await 发请求 第四步
+        // this.list = ret[1].data.data //不用解构赋值的vue2写法取数组里面的第二个元素this.list = ret[1].data.data
+        this.goodslist = ret.data.data //不用解构赋值的vue2写法取数组里面的第二个元素this.list = ret.data.data
+
+        // console.log(res.data.data);
+        // this.list = res.data.data;   ////这样写也可以搭配解构赋值 let [err, res] = ret;
+
+        // 需就是加一个动画数据正在加载中的效果 第二步
+        uni.hideLoading(); //取到数据立即隐藏动画数据正在加载的效果
+
       }
+
+
+
     },
     onLoad() {
       // 使用async 和  await 发请求 第二步  // 在create(){}写也可以
       this.getList()
+      this.getgoodslist()
     },
   }
 </script>
@@ -329,7 +332,7 @@
     display: flex;
     justify-content: space-between;
     width: 94%;
-    background-color: pink;
+    // background-color: pink;
     margin: 80rpx auto;
 
     navigator {
@@ -362,7 +365,7 @@
   .cooker {
     width: 99%;
     height: 550rpx;
-    background-color: pink;
+    // background-color: pink;
     margin: 20rpx auto;
 
     image {
@@ -374,7 +377,7 @@
 
     .people {
       width: 90%;
-      background-color: red;
+      // background-color: red;
       height: 350rpx;
       margin: 20rpx auto;
       display: flex;
@@ -383,7 +386,7 @@
       .peoples {
         width: 30%;
         height: 300rpx;
-        background-color: yellowgreen;
+        // background-color: yellowgreen;
 
         image {
           width: 150rpx;
@@ -407,7 +410,7 @@
   // 优选餐宴
   .restaurant {
     width: 99%;
-    background-color: yellow;
+    // background-color: yellow;
     margin: 20rpx auto;
 
     image {
@@ -479,13 +482,13 @@
       }
     }
   }
-  
-  .bottom-pic{
+
+  .bottom-pic {
     width: 100%;
     height: 400rpx;
     background-color: blue;
-    
-    image{
+
+    image {
       width: 100%;
       height: 100%;
     }

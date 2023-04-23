@@ -109,7 +109,7 @@
     .title {
       width: 100%;
       height: 100rpx;
-      background-color: red;
+      // background-color: red;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -147,7 +147,7 @@
       width: 94%;
       height: 700rpx;
       margin: 20rpx auto;
-      background-color: pink;
+      // background-color: pink;
       position: relative;
 
       image {
@@ -162,6 +162,7 @@
         left: 500rpx;
         top: 418rpx;
         background-color: gray;
+        border-radius: 20rpx;
 
         image {
           width: 50rpx;

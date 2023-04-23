@@ -7,7 +7,7 @@
         <image src="../../static/icon/icon_cha.png" mode=""></image>
         <text>已有9个行程</text>
       </view>
-      <!-- 清空 -->
+      <!-- 历史 -->
       <view class="clear">
         <image src="/static/icon/92.png" mode=""></image>
         <text>历史</text>
@@ -90,13 +90,12 @@
     .title {
       width: 100%;
       height: 100rpx;
-      background-color: red;
+      // background-color: red;
       display: flex;
       justify-content: space-between;
 
       .collect {
         padding-left: 20rpx;
-
         image {
           width: 50rpx;
           height: 50rpx;
@@ -104,14 +103,21 @@
         }
       }
 
-      // 清空
+      // 历史
       .clear {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         padding-right: 20rpx;
 
         image {
           width: 50rpx;
           height: 50rpx;
           margin-top: 20rpx;
+        }
+        text{
+          padding-left: 10rpx;
+          box-sizing: border-box;
         }
       }
     }
@@ -122,20 +128,23 @@
       width: 94%;
       height: 900rpx;
       margin: 20rpx auto;
-      background-color: pink;
+      // background-color: pink;
 
       // 图片上面的两条信息
       .info {
         width: 100%;
         height: 120rpx;
-        background-color: yellowgreen;
+        // background-color: yellowgreen;
         padding-left: 30rpx;
         .infos {
-          font-size: 25rpx;
+          font-size: 26rpx;
           
           image {
             width: 40rpx;
             height: 40rpx;
+          }
+          text{
+            padding-left: 15rpx;
           }
         }
       }
@@ -181,6 +190,7 @@
         height: 75rpx;
         background-color: crimson;
         color: #f5f5f5;
+        margin-top: 20rpx;
       }
 
     }

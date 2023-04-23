@@ -41,7 +41,7 @@
     .title {
       width: 100%;
       height: 100rpx;
-      background-color: red;
+      // background-color: red;
       display: flex;
       justify-content: space-between;
       align-items: center;

@@ -16,18 +16,21 @@
     </view>
 
     <!-- 烹饪历史 -->
-    <view class="history">
-      <!-- 左侧 -->
-      <view class="historys">
-        <image src="/static/icon/icon_order.png" mode=""></image>
-        <text>烹饪历史</text>
-      </view>
+    <navigator url="../../subpkg/edge/edge">
+      <view class="history">
+        <!-- 左侧 -->
+        <view class="historys">
+          <image src="/static/icon/icon_order.png" mode=""></image>
+          <text>烹饪历史</text>
+        </view>
 
-      <!-- 右侧 -->
-      <view class="arrow">
-        》
+        <!-- 右侧 -->
+        <view class="arrow">
+          》
+        </view>
       </view>
-    </view>
+    </navigator>
+
 
     <!-- 支付记录 -->
     <view class="history">
